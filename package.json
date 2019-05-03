@@ -1,0 +1,65 @@
+{
+  "name": "Gathr",
+  "main": "electron.js",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --port 9090",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron": "electron .",
+    "dev": "cross-env NODE_ENV=development npm-run-all --parallel serve electron",
+    "run": "npm-run-all build electron",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=public/Images/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=favicon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Gathr\""
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "electron-devtools-installer": "^2.2.4",
+    "electron-packager": "^13.1.1",
+    "electron-reload": "^1.4.0",
+    "localforage": "^1.7.3",
+    "localforage-getitems": "^1.4.2",
+    "vue": "^2.6.6",
+    "vue-router": "^3.0.2",
+    "vue-sorted-table": "^1.1.1",
+    "vuex": "^3.1.0",
+    "vuex-electron": "^1.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.4.0",
+    "@vue/cli-plugin-eslint": "^3.4.0",
+    "@vue/cli-service": "^3.4.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^4.0.7",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
